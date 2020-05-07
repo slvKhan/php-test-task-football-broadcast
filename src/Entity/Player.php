@@ -71,7 +71,7 @@ class Player
         return $this->goals;
     }
 
-    public function addGoal()
+    public function addGoal(): void
     {
         $this->goals += 1;
     }
@@ -81,7 +81,7 @@ class Player
         $this->cards[] = $type;
     }
 
-    public function getCards()
+    public function getCards(): array
     {
         return $this->cards;
     }

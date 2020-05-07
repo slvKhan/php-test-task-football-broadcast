@@ -139,7 +139,7 @@ class MatchBuilder
         }
     }
 
-    private function calcTimePositions(Team $team)
+    private function calcTimePositions(Team $team): void
     {
         $result = array_reduce($team->getPlayers(), function($acc, $player) {
             $position = $player->getPosition();
