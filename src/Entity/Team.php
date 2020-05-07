@@ -78,9 +78,11 @@ class Team
         return $this->coach;
     }
 
-    public function addGoal(): void
+    public function addGoal(int $playerNumber): void
     {
         $this->goals += 1;
+        $player = $this->getPlayer($playerNumber);
+        $player->addGoal();
     }
 
     public function getGoals(): int
