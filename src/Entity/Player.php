@@ -13,8 +13,9 @@ class Player
     private int $outMinute;
     private int $goals;
     private array $cards;
+    private string $position;
 
-    public function __construct(int $number, string $name)
+    public function __construct(int $number, string $name, string $position)
     {
         $this->number = $number;
         $this->name = $name;
@@ -23,6 +24,7 @@ class Player
         $this->outMinute = 0;
         $this->goals = 0;
         $this->cards = [];
+        $this->position = $position;
     }
 
     public function getNumber(): int
@@ -33,6 +35,11 @@ class Player
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function getPosition(): string
+    {
+        return $this->position;
     }
 
     public function getInMinute(): int
