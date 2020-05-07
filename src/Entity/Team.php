@@ -90,6 +90,21 @@ class Team
         return $this->goals;
     }
 
+    public function addYellowCard(int $playerNumber): void
+    {
+        $this->addCard($playerNumber, 'yellow');
+    }
+
+    public function addRedCard(int $playerNumber): void
+    {
+        $this->addCard($playerNumber, 'red');
+    }
+
+    public function addCard(int $playerNumber, string $type): void
+    {
+        $player = $this->getPlayer($playerNumber);
+        $player->addCard($type);
+    }
 
     private function assertCorrectPlayers(array $players)
     {

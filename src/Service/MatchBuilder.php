@@ -115,7 +115,16 @@ class MatchBuilder
                     $player = $details['playerNumber'];
                     $team->addGoal($player);
                     break;
-
+                case 'yellowCard':
+                    $team = $this->getTeamByName($match, $details['team']);
+                    $player = $details['playerNumber'];
+                    $team->addYellowCard($player);
+                    break;
+                case 'redCard':
+                    $team = $this->getTeamByName($match, $details['team']);
+                    $player = $details['playerNumber'];
+                    $team->addRedCard($player);
+                    break;
             }
 
             $match->addMessage(
