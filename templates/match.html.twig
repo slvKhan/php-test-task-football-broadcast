@@ -121,16 +121,17 @@
                         </td>
                         <td>
                             {{ player.name }}
-                             {% for i in 0..player.goals %}
+                            {% for i in 0..player.goals %}
                                {% if i != 0 %} 
                                     <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/goal.png">
                                {% endif %}
                             {% endfor %}
+
                             {% for card in player.cards %}
                                {% if card == 'yellow' %} 
                                     <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/card.png">
                                 {% elseif card == 'red' %}
-                                    <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/card.png">
+                                    <img src="https://www.soccer.ru/sites/all/themes/newtheme/images/events-icons/red_card.png">
                                {% endif %}
                             {% endfor %}
                         </td>
