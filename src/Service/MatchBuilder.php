@@ -89,14 +89,14 @@ class MatchBuilder
             switch ($event['type']) {
                 case 'startPeriod':
                     $period++;
-
+                    $startTime = $minute - 1;
                     $players = $details['team1']['startPlayerNumbers'] ?? [];
                     if (count($players)) {
-                        $this->goToPlay($match->getHomeTeam(), $players, $minute);
+                        $this->goToPlay($match->getHomeTeam(), $players, $startTime);
                     }
                     $players = $details['team2']['startPlayerNumbers'] ?? [];
                     if (count($players)) {
-                        $this->goToPlay($match->getAwayTeam(), $players, $minute);
+                        $this->goToPlay($match->getAwayTeam(), $players, $startTime);
                     }
                     break;
                 case 'finishPeriod':
